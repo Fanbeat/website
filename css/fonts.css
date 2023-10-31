@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'akkuratbold';
+    src: url('fonts/akkurat_bold-webfont.eot');
+    src: url('fonts/akkurat_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/akkurat_bold-webfont.woff2') format('woff2'),
+         url('fonts/akkurat_bold-webfont.woff') format('woff'),
+         url('fonts/akkurat_bold-webfont.ttf') format('truetype'),
+         url('fonts/akkurat_bold-webfont.svg#akkuratbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'akkuratregular';
+  src: url('fonts/AkkRg_Pro_1.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?y105re');
+    src:    url('fonts/icomoon.eot?y105re#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.woff2?y105re') format('woff2'),
+        url('fonts/icomoon.ttf?y105re') format('truetype'),
+        url('fonts/icomoon.woff?y105re') format('woff'),
+        url('fonts/icomoon.svg?y105re#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'GCFrankLight';
+  src: url('fonts/GCFrankLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-quote:before {
+    content: "\e900";
+}
+.icon-linkedin:before {
+    content: "\e901";
+}
+.icon-apple:before {
+    content: "\e601";
+}
+.icon-android:before {
+    content: "\e600";
+}
+.icon-facebook:before {
+    content: "\e602";
+}
+.icon-twitter:before {
+    content: "\e603";
+}

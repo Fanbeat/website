@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WynnBET Tourney Challenge | Powered by FanBeat</title>
+
+	<meta name="image" content="https://d29apgvy4a3add.cloudfront.net/sharing/share-wynnbet.png">
+	<!-- Schema.org for Google -->
+	<meta itemprop="name" content="WynnBET Tourney Challenge | 8 Questions Per Round. $134,000 in Prizes.">
+	<meta itemprop="image" content="https://d29apgvy4a3add.cloudfront.net/sharing/share-wynnbet.png">
+	<meta itemprop="description" content="">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="WynnBET Tourney Challenge | 8 Questions Per Round. $134,000 in Prizes.">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:site" content="@fanbeat">
+	<meta name="twitter:creator" content="@fanbeat">
+	<meta name="twitter:image:src" content="https://d29apgvy4a3add.cloudfront.net/sharing/share-wynnbet.png">
+	<!-- Twitter - Mobile App (iOS & Android) -->
+	<meta name="twitter:app:id:iphone" content="966632826">
+	<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+	<meta name="og:title" content="WynnBET Tourney Challenge | 8 Questions Per Round. $134,000 in Prizes.">
+	<meta name="og:description" content="">
+	<meta name="og:image:secure_url" content="https://d29apgvy4a3add.cloudfront.net/sharing/share-wynnbet.png">
+	<meta property="og:image" content="https://d29apgvy4a3add.cloudfront.net/sharing/share-wynnbet.png" />
+	<!-- <meta name="og:url" content="https://play.fanbeat.com"> -->
+	<meta name="og:site_name" content="WynnBET Tourney Challenge | 8 Questions Per Round. $134,000 in Prizes.">
+	<meta name="fb:app_id" content="597134073724700">
+	<meta name="og:type" content="website">
+	<!-- Open Graph - Mobile App (iOS & Android) -->
+	<meta name="al:ios:app_store_id" content="966632826">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<script>
+		$(document).ready(function() {
+			var currentUrl = new URL(window.location.href);
+			var redirectUrl = new URL("https://play.fanbeat.com/channels/wynnchallenge/latest");
+
+			currentUrl.searchParams.forEach(function(value, key) {
+				redirectUrl.searchParams.set(key, value);
+			});
+
+			if (!redirectUrl.searchParams.get("referral")) {
+				redirectUrl.searchParams.set("referral", "Xiq0xn9S");
+			}
+
+			if (!redirectUrl.searchParams.get("utm_source")) {
+				redirectUrl.searchParams.set("utm_source", "wynnbetchallenge-vanity-url");
+			}
+
+			if (!redirectUrl.searchParams.get("utm_medium")) {
+				redirectUrl.searchParams.set("utm_medium", "web");
+			}
+
+			if (!redirectUrl.searchParams.get("utm_campaign")) {
+				redirectUrl.searchParams.set("utm_campaign", "wynnbetchallenge-vanity-url");
+			}
+
+			window.location.href = redirectUrl.toString();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FanBeat | Seattle Seahawks</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<script>
+		$(document).ready(function() {
+			var currentUrl = new URL(window.location.href);
+			var redirectUrl = new URL("https://play.fanbeat.com/channels/seattle-seahawks/latest");
+
+			currentUrl.searchParams.forEach(function(value, key) {
+				redirectUrl.searchParams.set(key, value);
+			});
+
+			if (!redirectUrl.searchParams.get("referral")) {
+				redirectUrl.searchParams.set("referral", "uWu7EjSP");
+			}
+
+			if (!redirectUrl.searchParams.get("utm_source")) {
+				redirectUrl.searchParams.set("utm_source", "fanbeat-seahawks-vanity-url");
+			}
+
+			if (!redirectUrl.searchParams.get("utm_medium")) {
+				redirectUrl.searchParams.set("utm_medium", "web");
+			}
+
+			if (!redirectUrl.searchParams.get("utm_campaign")) {
+				redirectUrl.searchParams.set("utm_campaign", "fanbeat-seahawks-vanity-url");
+			}
+
+			window.location.href = redirectUrl.toString();
+		});
+	</script>
+</body>
+</html>

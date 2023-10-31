@@ -1,0 +1,29 @@
+<html>
+
+<head>
+</head>
+
+<body>
+	<script>
+		var currentUrl = new URL(window.location.href),
+			referral = currentUrl.searchParams.get("referral"),
+			utmSource = currentUrl.searchParams.get("utm_source"),
+			utmMedium = currentUrl.searchParams.get("utm_medium"),
+			utmCampaign = currentUrl.searchParams.get("utm_campaign");
+
+		var url = new URL('https://play.fanbeat.com/#/channels/epic-flash/latest');
+
+		if (referral)
+			url.searchParams.set("referral", referral);
+		if (utmSource)
+			url.searchParams.set("utm_source", utmSource);
+		if (utmMedium)
+			url.searchParams.set("utm_medium", utmMedium);
+		if (utmCampaign)
+			url.searchParams.set("utm_campaign", utmCampaign);
+
+		window.location = url.toString();
+	</script>
+</body>
+
+</html>

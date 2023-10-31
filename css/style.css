@@ -1,0 +1,4119 @@
+/*
+//      _/      _/  _/_/_/  _/      _/  _/_/_/  _/      _/    _/_/_/
+//     _/_/  _/_/    _/      _/  _/      _/    _/_/    _/  _/
+//    _/  _/  _/    _/        _/        _/    _/  _/  _/    _/_/
+//   _/      _/    _/      _/  _/      _/    _/    _/_/        _/
+//  _/      _/  _/_/_/  _/      _/  _/_/_/  _/      _/  _/_/_/
+*/
+/* =========================================================================
+   Colors & Shades
+   ========================================================================== */
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+/* ==========================================================================
+   Mixins (for animation edition!)
+   ========================================================================== */
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+/**
+ * Profound Grid
+ * 
+ * Built in Sass (SCSS) this responsive/adaptive grid supports both fixed and fluid layouts, 
+ * relative and fixed gutters, as well as your choice of semantic markup or generic '.grid-x' classes.
+ * 
+ * The biggest difference to other grid systems is the use of negative margins for column
+ * placements, avoiding the subpixel rounding issues that usually break/uglify fluid layouts
+ * in some browsers.
+ * 
+ * Nested columns are supported too, without having to reset the grid on each level. 
+ *
+ * Credits/Inspiration:
+ * -------------------
+ * Semantic Grid: http://www.semantic.gs
+ * Susy: http://susy.oddbird.net
+ * Negative Grid: http://chrisplaneta.com/freebies/negativegrid-fluid-css-grid-by-chris-planeta/
+ *
+ * @author Profound Creative Studio
+ * @url http://www.profoundgrid.com
+ * @url http://www.weareprofound.com 
+ */
+/**
+ * Clearfix
+ */
+/**
+ * Legacy Clearfix
+ */
+/**
+ * Establish the grid-containing element.
+ */
+/**
+ * Align an element to the grid.
+ */
+/**
+ * Apply to any column to make it the last one of the current row.
+ */
+/*
+//      _/      _/    _/_/    _/_/_/  _/      _/
+//     _/_/  _/_/  _/    _/    _/    _/_/    _/
+//    _/  _/  _/  _/_/_/_/    _/    _/  _/  _/
+//   _/      _/  _/    _/    _/    _/    _/_/
+//  _/      _/  _/    _/  _/_/_/  _/      _/
+*/
+/* ==========================================================================
+   Body & Wrapper
+   ========================================================================== */
+@media only screen and (max-width: 980px) {
+  html {
+    font-size: 62% !important;
+  }
+}
+@media only screen and (max-width: 840px) {
+  html {
+    font-size: 54% !important;
+  }
+}
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 46% !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 42% !important;
+  }
+}
+
+body {
+  background: #e92637;
+}
+
+.container {
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Site Header
+   ========================================================================== */
+.page-header {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+.page-header .video-wrap {
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+  background-color: #000;
+}
+.page-header .video-wrap .image {
+  position: absolute;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 100;
+  background-size: cover;
+  background-position: center center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 680px) {
+  .page-header .video-wrap .image {
+    display: block;
+    background-position: 50% 50%;
+  }
+}
+.page-header .video-wrap .embed-container {
+  position: absolute; /*padding-bottom: 56.25%; height: 0;*/
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+}
+.page-header .video-wrap .embed-container iframe, .page-header .video-wrap .embed-container object, .page-header .video-wrap .embed-container embed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 680px) {
+  .page-header .video-wrap .embed-container .image {
+    display: block;
+    background-position: 50% 50%;
+  }
+  .page-header .video-wrap .embed-container iframe, .page-header .video-wrap .embed-container object, .page-header .video-wrap .embed-container embed {
+    display: none;
+  }
+}
+.page-header #main-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background: transparent;
+  -moz-transition: all 150ms ease;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  left: 0;
+}
+.page-header #main-nav .site-logo {
+  opacity: 0;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  margin: 0 auto;
+  width: 181px;
+  height: 28px;
+  background: url("../img/logo.png") center bottom no-repeat;
+  background-size: 181px 28px;
+  text-indent: -9999em;
+  -moz-transition: all 150ms ease;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .page-header #main-nav .site-logo {
+    background-image: url("../img/logo@2x.png");
+  }
+}
+.page-header #main-nav.scrolled {
+  background: #000;
+  padding: 0 20px;
+}
+.page-header #main-nav.scrolled .site-logo {
+  opacity: 1;
+}
+.page-header #main-nav.scrolled ul {
+  text-align: right;
+}
+@media only screen and (max-width: 980px) {
+  .page-header #main-nav.scrolled .site-logo {
+    display: none;
+  }
+  .page-header #main-nav.scrolled ul {
+    text-align: center;
+  }
+}
+.page-header #main-nav ul {
+  padding: 15px 0;
+  text-align: center;
+  width: 100%;
+}
+.page-header #main-nav ul li {
+  display: inline-block;
+  margin: 0 2.5%;
+  /*@include respond-to(900px) {
+    padding: 10px;
+    li { padding: 10px; }
+  }
+  @include respond-to(850px) {
+    padding: 5px;
+  }*/
+}
+.page-header #main-nav ul li:first-of-type {
+  margin-left: 0;
+}
+.page-header #main-nav ul li:last-of-type {
+  margin-right: 0;
+}
+.page-header #main-nav ul li a {
+  display: inline-block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 34px;
+  line-height: 3.4rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0;
+  color: #fff;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+.page-header #main-nav ul li a:hover, .page-header #main-nav ul li a:focus {
+  color: rgba(255, 255, 255, 0.6);
+}
+.page-header #main-nav ul li a span {
+  font-size: inherit;
+}
+.page-header #main-nav ul li a .bp6, .page-header #main-nav ul li a .bp7 {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .page-header #main-nav ul li a .bp6plus {
+    display: none;
+  }
+  .page-header #main-nav ul li a .bp6 {
+    display: inline;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .page-header #main-nav ul li a .bp7plus {
+    display: none;
+  }
+  .page-header #main-nav ul li a .bp7 {
+    display: inline;
+  }
+}
+.page-header #main-nav ul li:first-of-type, .page-header #main-nav ul li:first-of-type a {
+  padding-left: 0;
+}
+.page-header #main-nav ul li:last-of-type, .page-header #main-nav ul li:last-of-type a {
+  padding-right: 0;
+}
+.page-header #main-nav ul li.button {
+  margin-left: 4%;
+}
+.page-header #main-nav ul li.button a {
+  display: inline-block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 34px;
+  line-height: 3.4rem;
+  white-space: nowrap;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  padding: 0 34px;
+  text-transform: none;
+}
+.page-header #main-nav ul li.button a:hover, .page-header #main-nav ul li.button a:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.page-header .text {
+  padding-top: calc(6.5% + 65px);
+  padding-bottom: 1.5%;
+}
+.page-header .site-logo {
+  margin: 0 auto;
+  width: 385px;
+  height: 60px;
+  background: url("../img/logo.png") center bottom no-repeat;
+  background-size: 385px;
+  text-indent: -9999em;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .page-header .site-logo {
+    background-image: url("../img/logo@2x.png");
+  }
+}
+@media screen and (max-width: 500px) {
+  .page-header .site-logo {
+    background-size: 90vw;
+    width: 90vw;
+  }
+}
+.page-header h2 {
+  font-family: "Jura", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1.75px;
+  padding-top: 2.4%;
+  padding-bottom: 1.5%;
+  font-size: 48px;
+  font-size: 4.8rem;
+  line-height: 40px;
+  line-height: 4rem;
+}
+.page-header h2 .break {
+  display: inline;
+}
+@media only screen and (max-width: 460px) {
+  .page-header h2 .break {
+    display: block;
+    line-height: 0;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .page-header h2 {
+    padding-top: 35px;
+    padding-bottom: 20px;
+  }
+}
+.page-header p {
+  max-width: 570px;
+  padding: 0;
+  margin: 0 auto;
+  font-family: Helvetica;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+}
+@media only screen and (max-width: 710px) {
+  .page-header #main-nav ul li {
+    margin: 0 1.5%;
+  }
+  .page-header #main-nav ul li.button {
+    margin-left: 2%;
+  }
+  .page-header #main-nav ul li.button a {
+    padding: 0 25px;
+  }
+}
+@media only screen and (max-width: 485px) {
+  .page-header #main-nav ul li {
+    margin: 0 1.5%;
+  }
+  .page-header #main-nav ul li.button {
+    margin-left: 2%;
+  }
+  .page-header #main-nav ul li.button a {
+    padding: 0 10px;
+  }
+  .page-header #main-nav ul li ins {
+    display: none;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .page-header #main-nav ul {
+    padding: 10px 0;
+  }
+  .page-header .text {
+    padding: calc(20% + 50px) 0 16%;
+  }
+}
+
+.promo-container {
+  text-align: center;
+  margin: 30px auto 0;
+}
+.promo-container a {
+  display: inline-block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 34px;
+  line-height: 3.4rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0;
+  color: #fff;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+.promo-container a:hover, .promo-container a:focus {
+  color: rgba(255, 255, 255, 0.6);
+}
+.promo-container a span {
+  font-size: inherit;
+}
+.promo-container a .bp6, .promo-container a .bp7 {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .promo-container a .bp6plus {
+    display: none;
+  }
+  .promo-container a .bp6 {
+    display: inline;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .promo-container a .bp7plus {
+    display: none;
+  }
+  .promo-container a .bp7 {
+    display: inline;
+  }
+}
+.promo-container .nascar-promo {
+  display: inline-block;
+  padding-bottom: 9%;
+}
+@media only screen and (max-width: 1140px) {
+  .promo-container .nascar-promo {
+    display: block;
+    width: 100%;
+  }
+}
+.promo-container .nascar-promo img {
+  max-width: 200px;
+  margin-bottom: 29px;
+}
+.promo-container .nascar-promo .button a {
+  display: inline-block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 34px;
+  line-height: 3.4rem;
+  white-space: nowrap;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  padding: 0 40px;
+  text-transform: none;
+}
+.promo-container .nascar-promo .button a:hover, .promo-container .nascar-promo .button a:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.promo-container .braves-promo {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 9%;
+  width: 40%;
+  right: 3%;
+}
+@media only screen and (max-width: 1140px) {
+  .promo-container .braves-promo {
+    display: block;
+    width: 100%;
+    right: 0;
+  }
+}
+.promo-container .braves-promo img {
+  max-width: 150px;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+.promo-container .braves-promo .button {
+  margin-left: 0;
+}
+.promo-container .braves-promo .button a {
+  display: inline-block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 34px;
+  line-height: 3.4rem;
+  white-space: nowrap;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  padding: 0 40px;
+  text-transform: none;
+}
+.promo-container .braves-promo .button a:hover, .promo-container .braves-promo .button a:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   Page Content
+   ========================================================================== */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.page-footer {
+  padding: 5% 0;
+  color: #e92637;
+  letter-spacing: 0.8px;
+  background: #fff;
+}
+@media only screen and (max-width: 680px) {
+  .page-footer {
+    padding: 12% 0;
+  }
+}
+.page-footer a {
+  color: #e92637;
+}
+.page-footer a:hover, .page-footer a:focus {
+  color: black;
+}
+.page-footer .colophon p, .page-footer .colophon span, .page-footer .colophon a {
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 17px;
+  line-height: 1.7rem;
+  padding: 0 10px;
+}
+.page-footer .social {
+  padding-top: 3.48%;
+}
+.page-footer .social a {
+  text-decoration: none;
+  padding: 4px;
+}
+.page-footer .social i {
+  font-size: 30px;
+  font-size: 3rem;
+}
+@media only screen and (max-width: 680px) {
+  .page-footer .social {
+    padding-top: 8%;
+  }
+  .page-footer .social i {
+    font-size: 40px;
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .page-footer span.copyright {
+    display: block;
+    padding-bottom: 15px;
+  }
+}
+
+/*
+//       _/_/_/  _/          _/_/    _/_/_/      _/_/    _/
+//    _/        _/        _/    _/  _/    _/  _/    _/  _/
+//   _/  _/_/  _/        _/    _/  _/_/_/    _/_/_/_/  _/
+//  _/    _/  _/        _/    _/  _/    _/  _/    _/  _/
+//   _/_/_/  _/_/_/_/    _/_/    _/_/_/    _/    _/  _/_/_/_/
+*/
+/* ==========================================================================
+   Links, Headings, Paragraphs, HR's & Lists
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Jura", sans-serif;
+  font-weight: 300;
+  font-size: 48px;
+  font-size: 4.8rem;
+  line-height: 54px;
+  line-height: 5.4rem;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+  font-size: 36px;
+  font-size: 3.6rem;
+  line-height: 42px;
+  line-height: 4.2rem;
+  letter-spacing: 1px;
+}
+
+ins {
+  background: none;
+}
+
+ul, ol, li, p, span, a {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 23px;
+  line-height: 2.3rem;
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a, input {
+  -moz-transition: all 150ms ease;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+ul > li {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Misc
+   ========================================================================== */
+.icon-apple, .icon-android {
+  font-style: normal;
+  font-size: 28px;
+  font-size: 2.8rem;
+  color: #fff;
+}
+
+.download-bar {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 22px 160px 22px 25px;
+  position: relative;
+}
+.download-bar a {
+  text-decoration: none;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+}
+.download-bar a.btn-ios {
+  right: 65px;
+}
+.download-bar a.btn-android {
+  right: 25px;
+}
+.download-bar span {
+  letter-spacing: 1px;
+  padding-right: 24px;
+}
+@media only screen and (max-width: 680px) {
+  .download-bar {
+    padding: 22px 80px 22px 25px;
+  }
+}
+
+.download-btn {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 20px 25px;
+  position: relative;
+  text-decoration: none;
+  width: 310px;
+  text-align: left;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 18px;
+  line-height: 1.8rem;
+  line-height: 1.6;
+  margin-right: 20px;
+}
+.download-btn:active {
+  position: relative;
+  top: 1px;
+}
+.download-btn.btn-android {
+  margin-right: 0;
+}
+.download-btn i {
+  float: right;
+  position: relative;
+  top: -2px;
+}
+.download-btn:hover, .download-btn:focus {
+  color: #EA4537;
+  border-color: #EA4537;
+}
+
+@media only screen and (max-width: 720px) {
+  .download-btn-wrap {
+    text-align: center;
+  }
+  .download-btn {
+    display: block;
+    margin: 0 auto !important;
+  }
+  .download-btn.btn-android {
+    margin-top: 20px !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .download-btn {
+    width: 90% !important;
+  }
+}
+a.anchor {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  top: -115px;
+}
+@media only screen and (max-width: 680px) {
+  a.anchor {
+    top: -75px;
+  }
+}
+
+ins {
+  color: inherit;
+  background: none;
+}
+
+/*
+    _/_/_/      _/_/      _/_/_/  _/_/_/_/    _/_/_/
+   _/    _/  _/    _/  _/        _/        _/
+  _/_/_/    _/_/_/_/  _/  _/_/  _/_/_/      _/_/
+ _/        _/    _/  _/    _/  _/              _/
+_/        _/    _/    _/_/_/  _/_/_/_/  _/_/_/
+*/
+/* =======================================
+   Homepage
+   ======================================= */
+/* HOW IT WORKS */
+#hiw {
+  background: #e92637;
+  padding-top: 5%;
+  overflow: hidden;
+}
+@media only screen and (max-width: 680px) {
+  #hiw {
+    padding-top: 12%;
+  }
+}
+#hiw h2 {
+  padding-bottom: 25px;
+  color: #fff;
+}
+#hiw p {
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: 27px;
+  line-height: 2.7rem;
+  letter-spacing: 1.3px;
+  font-weight: normal;
+  color: #fff;
+}
+#hiw p .slash {
+  display: inline-block;
+  padding: 0 5px;
+}
+#hiw p strong {
+  display: block;
+  padding-top: 5px;
+}
+@media only screen and (max-width: 1000px) {
+  #hiw p strong {
+    display: inline-block;
+  }
+}
+#hiw p:last-of-type {
+  padding-bottom: 6%;
+}
+#hiw .phones {
+  max-width: 1010px;
+  margin: 0 auto;
+  position: relative;
+}
+#hiw .phones .phone {
+  display: inline-block;
+  width: 33%;
+}
+#hiw .phones .phone img {
+  position: relative;
+  bottom: -4px;
+  width: 100%;
+  height: auto;
+}
+#hiw .phones .phone#phone-1 {
+  text-align: left;
+}
+#hiw .phones .phone#phone-3 {
+  text-align: right;
+}
+#hiw .phones .phone#phone-1 img, #hiw .phones .phone#phone-3 img {
+  max-width: 276px;
+  height: auto;
+}
+#hiw .phones .phone#phone-2 img {
+  max-width: 333px;
+  height: auto;
+}
+@media only screen and (max-width: 980px) {
+  #hiw .phones {
+    margin-top: 25px;
+  }
+  #hiw .phones .phone {
+    width: 30%;
+  }
+  #hiw .phones .phone#phone-2 {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
+@media only screen and (max-width: 680px) {
+  #hiw .phones .phone#phone-1 {
+    position: absolute;
+    bottom: 0;
+    left: -15%;
+    z-index: 1;
+    width: 40%;
+  }
+  #hiw .phones .phone#phone-3 {
+    position: absolute;
+    bottom: 0;
+    right: -15%;
+    z-index: 1;
+    width: 40%;
+  }
+  #hiw .phones .phone#phone-2 {
+    position: relative;
+    z-index: 2;
+    width: 70%;
+  }
+}
+
+/* PARTNERSHIPS */
+#partners {
+  background: #fff url("../img/bg-cheer@2x.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  padding-top: 9.69%;
+  overflow: hidden;
+}
+@media only screen and (max-width: 680px) {
+  #partners {
+    padding-top: 12%;
+    padding-bottom: 9%;
+  }
+}
+#partners .container {
+  padding-left: 28%;
+  position: relative;
+  text-align: left;
+}
+#partners .phone {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 21%;
+  height: auto;
+}
+#partners .phone:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#partners .phone img {
+  float: left;
+}
+@media only screen and (max-width: 1420px) {
+  #partners .phone {
+    left: 15px;
+  }
+}
+#partners h2 {
+  padding-bottom: 20px;
+  color: #e92637;
+}
+#partners p {
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: 27px;
+  line-height: 2.7rem;
+  letter-spacing: 1.3px;
+  font-weight: normal;
+  color: #e92637;
+  padding-bottom: 9%;
+  padding-right: 25%;
+}
+#partners ul {
+  padding-bottom: 3%;
+}
+#partners ul li:nth-of-type(2n+1) {
+  margin-left: 0%;
+  margin-bottom: 2.5%;
+  clear: both;
+  overflow: hidden;
+  *zoom: 1;
+}
+#partners ul li:nth-of-type(2n+2) {
+  margin-left: 51.25%;
+  margin-bottom: 2.5%;
+  clear: none;
+}
+#partners ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#partners ul li {
+  float: left;
+  margin-right: -100%;
+  width: 48.75%;
+  padding-left: 120px;
+  position: relative;
+  padding-bottom: 5%;
+  padding-right: 3.5%;
+}
+#partners ul li h3 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: normal;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 36px;
+  line-height: 3.6rem;
+  letter-spacing: 1.3px;
+  text-transform: none;
+  color: #e92637;
+  padding-bottom: 5px;
+}
+#partners ul li p {
+  color: #000;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 26px;
+  line-height: 2.6rem;
+  letter-spacing: 1.3px;
+  padding: 0;
+}
+#partners ul li .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 95px;
+  height: 95px;
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+#partners ul li .icon#icon-engage {
+  background-image: url("../img/icon-engage.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #partners ul li .icon#icon-engage {
+    background-image: url("../img/icon-engage@2x.png");
+  }
+}
+#partners ul li .icon#icon-attract {
+  background-image: url("../img/icon-attract.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #partners ul li .icon#icon-attract {
+    background-image: url("../img/icon-attract@2x.png");
+  }
+}
+#partners ul li .icon#icon-monetize {
+  background-image: url("../img/icon-monetize.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #partners ul li .icon#icon-monetize {
+    background-image: url("../img/icon-monetize@2x.png");
+  }
+}
+#partners ul li .icon#icon-activate {
+  background-image: url("../img/icon-activate.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #partners ul li .icon#icon-activate {
+    background-image: url("../img/icon-activate@2x.png");
+  }
+}
+@media only screen and (max-width: 1050px) {
+  #partners .container {
+    padding-left: 20px;
+  }
+  #partners .container .phone {
+    display: none;
+  }
+  #partners .container > h2, #partners .container > p {
+    text-align: center;
+    margin: 0 auto;
+  }
+  #partners .container p {
+    padding-right: 0;
+    max-width: 570px;
+  }
+}
+@media only screen and (max-width: 710px) {
+  #partners ul {
+    max-width: 570px;
+    margin: 0 auto;
+    padding-top: 15px;
+  }
+  #partners ul li:nth-of-type(1n+1) {
+    margin-left: 0%;
+    margin-bottom: 2.5%;
+    clear: both;
+    overflow: hidden;
+    *zoom: 1;
+  }
+  #partners ul li {
+    float: left;
+    margin-right: -100%;
+    width: 100%;
+  }
+}
+
+/* NOW PLAYING */
+#team {
+  padding: 10% 0 11%;
+  background: #000 url("../img/bg-diamond-turnerfield.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #team {
+    background-image: url("../img/bg-diamond-turnerfield@2x.jpg");
+  }
+}
+@media only screen and (max-width: 680px) {
+  #team {
+    padding-top: 12%;
+    padding-bottom: 15%;
+  }
+}
+#team h2 {
+  color: #fff;
+  padding-bottom: 4%;
+  padding-top: 0;
+}
+#team .mlb {
+  display: inline-block; /*padding-left: 170px;*/
+  text-align: center;
+  position: relative;
+}
+#team .mlb .mlb-logo {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 132px;
+  height: 132px;
+  background: url("../img/icon-mlb.png") left top no-repeat;
+  background-size: 132px 132px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #team .mlb .mlb-logo {
+    background-image: url("../img/icon-mlb@2x.png");
+  }
+}
+#team .mlb .text p {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: normal;
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: 27px;
+  line-height: 2.7rem;
+  color: #fff;
+  padding-top: 13px;
+  padding-bottom: 20px;
+  letter-spacing: 1.3px;
+}
+#team .mlb .text .download-bar {
+  color: #fff;
+}
+#team .mlb .text .download-bar a {
+  color: #fff;
+}
+#team .mlb .text .download-bar a:hover, #team .mlb .text .download-bar a:focus {
+  color: #e92637;
+}
+@media only screen and (max-width: 550px) {
+  #team .mlb {
+    padding-left: 0;
+  }
+  #team .mlb .mlb-logo {
+    position: static;
+    margin: 15px auto;
+  }
+  #team .mlb .text {
+    text-align: center;
+  }
+}
+
+/* BIG THINGS */
+#big {
+  padding: 4% 0 5%;
+  background: #e92637;
+  color: #fff;
+}
+@media only screen and (max-width: 680px) {
+  #big {
+    padding: 12% 0 15%;
+  }
+}
+#big h2 {
+  padding-bottom: 10px;
+}
+#big p {
+  font-weight: normal;
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: 27px;
+  line-height: 2.7rem;
+  letter-spacing: 1.3px;
+  padding-bottom: 4%;
+}
+@media only screen and (max-width: 890px) {
+  #big p {
+    padding-bottom: 35px;
+  }
+}
+#big a.download-btn {
+  color: #fff;
+  border-color: #fff;
+}
+#big a.download-btn:hover, #big a.download-btn:focus {
+  color: #fff;
+  border-color: #f2838c;
+}
+
+/* QUOTE */
+#quote {
+  display: none;
+  background: #fff;
+  overflow: hidden;
+}
+#quote .container {
+  padding-top: 8%;
+  padding-bottom: 8%;
+  position: relative;
+}
+@media only screen and (max-width: 680px) {
+  #quote .container {
+    padding-top: 12%;
+    padding-bottom: 12%;
+  }
+}
+#quote i.icon-quote {
+  color: #ebebeb;
+  font-size: 280px;
+  font-size: 28rem;
+  line-height: 140px;
+  line-height: 14rem;
+  z-index: 1;
+}
+#quote i.icon-quote#quote-open {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#quote i.icon-quote#quote-close {
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#quote blockquote {
+  text-align: center;
+  padding: 0 150px;
+  position: relative;
+  z-index: 2;
+}
+#quote blockquote p {
+  font-family: "Jura", sans-serif;
+  font-weight: 400;
+  color: #e92637;
+  font-size: 46px;
+  font-size: 4.6rem;
+  line-height: 54px;
+  line-height: 5.4rem;
+}
+#quote blockquote cite {
+  display: block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-weight: normal;
+  color: #7d7d7d;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 40px;
+  line-height: 4rem;
+  padding-top: 3.5%;
+}
+@media only screen and (max-width: 1060px) {
+  #quote i.icon-quote {
+    color: #f6f6f6;
+  }
+  #quote blockquote {
+    padding: 0 5%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #quote blockquote {
+    padding: 0;
+  }
+  #quote blockquote p {
+    font-size: 40px;
+    font-size: 4rem;
+    line-height: 44px;
+    line-height: 4.4rem;
+  }
+  #quote blockquote cite {
+    font-size: 25px;
+    font-size: 2.5rem;
+    line-height: 30px;
+    line-height: 3rem;
+  }
+}
+@media only screen and (max-width: 680px) {
+  #quote i.icon-quote#quote-open {
+    top: -15px;
+  }
+  #quote i.icon-quote#quote-close {
+    bottom: -15px;
+  }
+}
+@media only screen and (max-width: 680px) {
+  #quote blockquote p {
+    font-size: 30px;
+    font-size: 3rem;
+    line-height: 34px;
+    line-height: 3.4rem;
+  }
+  #quote blockquote cite {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 25px;
+    line-height: 2.5rem;
+  }
+}
+
+/* News */
+#section-news {
+  padding: 12% 0 13%;
+  background: url("../img/news.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.news-slider::before {
+  position: absolute;
+  background-color: #E92636;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.8;
+}
+
+.news-slider .slick-track {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+}
+
+.news-slider .slick-track .slick-slider {
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+}
+
+.news-slider h2 {
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.news-slider {
+  position: relative;
+}
+
+.news-slider button.slick-arrow {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  border: 0;
+  font-size: 0;
+  outline: none;
+  z-index: 10;
+}
+
+.news-slider button.slick-arrow::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 26px;
+}
+
+.news-slider button.slick-prev::after {
+  content: "\f0a8";
+}
+
+.news-slider button.slick-next::after {
+  content: "\f0a9";
+}
+
+.news-slider button.slick-prev {
+  left: -18px;
+}
+
+.news-slider button.slick-next {
+  right: -18px;
+}
+
+.news-slider::before {
+  position: absolute;
+}
+
+.news-slider .news-box {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 20px 27px 40px;
+}
+
+.news-slider .news-box h3 {
+  font-size: 24px;
+  line-height: 34px;
+  color: #E7163A;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin-bottom: 13px;
+  text-transform: capitalize;
+}
+
+.news-slider .news-box p {
+  font-size: 22px;
+  line-height: 31px;
+  font-weight: 300;
+  color: #000000;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin-bottom: 20px;
+}
+
+.news-slider .news-box button {
+  border: 0;
+  padding: 0;
+}
+
+.news-slider .news-box button a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  padding: 8px 20px;
+  border: 2px solid #E7163A;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  display: block;
+  min-width: 170px;
+}
+
+.news-slider .news-box button a:hover {
+  background-color: #E7163A;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+  .news-slider .news-box h3 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .news-slider .news-box p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .news-slider .news-box button a {
+    font-size: 16px;
+    line-height: 20px;
+    min-width: 140px;
+    padding: 8px 13px;
+  }
+  .news-slider button.slick-arrow::after {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .news-slider button.slick-prev {
+    left: 15px;
+  }
+  .news-slider button.slick-next {
+    right: 15px;
+  }
+  .news-slider .slick-track .slick-slider {
+    max-width: 500px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .news-slider button.slick-prev {
+    left: -63px;
+  }
+  .news-slider button.slick-next {
+    right: -47px;
+  }
+  .news-slider .slick-track .slick-slider {
+    max-width: 600px;
+  }
+}
+/* COMPANY */
+#company {
+  padding: 12% 0 13%;
+  background: #000 url("../img/bg-atlanta.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #company {
+    background-image: url("../img/bg-atlanta@2x.jpg");
+  }
+}
+#company h2 {
+  padding-bottom: 35px;
+}
+#company p {
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: 27px;
+  line-height: 2.7rem;
+  letter-spacing: 1.3px;
+  font-weight: normal;
+  padding-bottom: 6%;
+  max-width: 990px;
+  margin: 0 auto;
+}
+#company ul {
+  padding: 0 5%;
+}
+#company ul li:nth-of-type(3n+1) {
+  margin-left: 0%;
+  margin-bottom: 2.5%;
+  clear: both;
+  overflow: hidden;
+  *zoom: 1;
+}
+#company ul li:nth-of-type(3n+2) {
+  margin-left: 34.17%;
+  margin-bottom: 2.5%;
+  clear: none;
+}
+#company ul li:nth-of-type(3n+3) {
+  margin-left: 68.33%;
+  margin-bottom: 2.5%;
+  clear: none;
+}
+#company ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#company ul li {
+  float: left;
+  margin-right: -100%;
+  width: 31.67%;
+  padding: 0 3.5%;
+}
+#company ul li img {
+  width: 289px;
+  height: auto;
+}
+#company ul li .name {
+  display: block;
+  padding-top: 30px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 22px;
+  line-height: 2.2rem;
+}
+#company ul li .position {
+  display: block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 22px;
+  line-height: 2.2rem;
+  font-style: italic;
+  padding: 10px 0 15px;
+}
+#company ul li a {
+  display: block;
+  text-align: center;
+  font-size: 26px;
+  font-size: 2.6rem;
+  line-height: 26px;
+  line-height: 2.6rem;
+  color: #fff;
+  text-decoration: none;
+}
+#company ul li a:hover, #company ul li a:focus {
+  color: #e92637;
+}
+@media only screen and (max-width: 900px) {
+  #company ul {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+  #company {
+    text-align: center;
+  }
+  #company ul {
+    margin: 0 auto;
+    display: inline-block;
+  }
+  #company ul li:nth-of-type(1n+1) {
+    margin-left: 0%;
+    margin-bottom: 2.5%;
+    clear: both;
+    overflow: hidden;
+    *zoom: 1;
+  }
+  #company ul li {
+    float: left;
+    margin-right: -100%;
+    width: 100%;
+    padding: 0 0 45px 140px;
+    position: relative;
+    text-align: left;
+    min-height: 125px;
+  }
+  #company ul li .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 125px;
+    height: auto;
+  }
+  #company ul li .name {
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 27px;
+    line-height: 2.7rem;
+    padding-top: 20px;
+  }
+  #company ul li .position {
+    padding-top: 5px;
+  }
+  #company ul li a {
+    text-align: left;
+  }
+  #company ul li:last-of-type {
+    padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 680px) {
+  #company p {
+    padding-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #company ul li {
+    padding-left: 120px;
+    min-height: 100px;
+  }
+  #company ul li .name {
+    padding-top: 6px;
+  }
+  #company ul li .image {
+    width: 100px;
+    height: auto;
+  }
+}
+
+/*
+//   .d8888b. 888    888       d8888888b     d8888888888888 
+//  d88P  Y88b888    888      d888888888b   d8888888        
+//  Y88b.     888    888     d88P88888888b.d88888888        
+//   "Y888b.  8888888888    d88P 888888Y88888P8888888888    
+//      "Y88b.888    888   d88P  888888 Y888P 888888        
+//        "888888    888  d88P   888888  Y8P  888888        
+//  Y88b  d88P888    888 d8888888888888   "   888888        
+//   "Y8888P" 888    888d88P     888888       8888888888888
+*/
+/* =======================================
+   Header
+   ======================================= */
+.landing-nascar-wrapper {
+  /* =======================================
+     Body
+     ======================================= */
+}
+.landing-nascar-wrapper .header {
+  background: url("../img/landing-nascar/bg-header.jpg") center center no-repeat;
+  background-size: cover;
+  text-transform: uppercase;
+  text-align: center;
+  min-height: 320px;
+  color: #FFFFFF;
+}
+.landing-nascar-wrapper .header img {
+  width: 275px;
+  min-height: 115px;
+  margin-top: 6%;
+}
+@media only screen and (min-width: 750px) {
+  .landing-nascar-wrapper .header img {
+    width: 400px;
+  }
+}
+.landing-nascar-wrapper .header .title {
+  font-family: "Jura", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 4.47em;
+  margin-bottom: 8%;
+  margin-top: 3%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .header .title {
+    font-size: 8.47em;
+    margin-bottom: 5%;
+  }
+}
+.landing-nascar-wrapper .header .subtitle p {
+  font-family: "akkuratregular";
+  font-weight: normal;
+  line-height: 1.5em;
+}
+.landing-nascar-wrapper .header .subtitle p:first-child {
+  font-size: 2.4em;
+  letter-spacing: 1px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .header .subtitle p:first-child {
+    font-size: 3.8em;
+  }
+}
+.landing-nascar-wrapper .header .subtitle p:nth-child(2) {
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-bottom: 12%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .header .subtitle p:nth-child(2) {
+    padding-bottom: 6%;
+  }
+}
+.landing-nascar-wrapper .how-it-works-section {
+  background-color: #EA241B;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+.landing-nascar-wrapper .how-it-works-section h2 {
+  font-family: "Jura", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  padding-top: 8%;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .how-it-works-section h2 {
+    padding-top: 6%;
+    position: relative;
+    left: 55%;
+    top: 90px;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  .landing-nascar-wrapper .how-it-works-section h2 {
+    top: 115px;
+  }
+}
+.landing-nascar-wrapper .how-it-works-section .iphone-promo {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 55%;
+  width: 55%;
+}
+@media screen and (min-width: 400px) and (max-width: 480px) {
+  .landing-nascar-wrapper .how-it-works-section .iphone-promo {
+    width: 51%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  .landing-nascar-wrapper .how-it-works-section .iphone-promo {
+    width: 46%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 680px) {
+  .landing-nascar-wrapper .how-it-works-section .iphone-promo {
+    width: 42%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 720px) {
+  .landing-nascar-wrapper .how-it-works-section .iphone-promo {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 840px) {
+  .landing-nascar-wrapper .how-it-works-section .iphone-promo {
+    width: 38%;
+    right: 53%;
+  }
+}
+@media screen and (min-width: 840px) and (max-width: 980px) {
+  .landing-nascar-wrapper .how-it-works-section .iphone-promo {
+    width: 36%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .how-it-works-section .iphone-promo {
+    bottom: 0px;
+    width: 29%;
+    height: 382px;
+  }
+}
+.landing-nascar-wrapper .how-it-works-section .iphone-promo img {
+  width: 120%;
+  position: absolute;
+  right: 20px;
+  top: 25%;
+}
+.landing-nascar-wrapper .how-it-works-section .list-container {
+  margin-left: 43%;
+  width: 60%;
+  display: block;
+  margin-top: 13%;
+  margin-bottom: 15%;
+}
+@media only screen and (min-width: 450px) {
+  .landing-nascar-wrapper .how-it-works-section .list-container {
+    margin-left: 50%;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-nascar-wrapper .how-it-works-section .list-container {
+    margin-left: 55%;
+    margin-bottom: 10%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .how-it-works-section .list-container {
+    margin-left: 60%;
+    margin-bottom: 7%;
+    margin-top: 12%;
+  }
+}
+.landing-nascar-wrapper .how-it-works-section .list-container ol {
+  display: inline;
+  list-style-type: none;
+}
+.landing-nascar-wrapper .how-it-works-section .list-container .list-numbers {
+  width: 34px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .how-it-works-section .list-container .list-numbers {
+    width: 45px;
+  }
+}
+.landing-nascar-wrapper .how-it-works-section .list-container .list-text {
+  font: normal 1.16em/2em Helvetica;
+  position: relative;
+  left: 10px;
+  bottom: 13px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .how-it-works-section .list-container .list-text {
+    font: normal 1.8em/2em Helvetica;
+  }
+}
+.landing-nascar-wrapper .how-it-works-section .list-container a {
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  color: #000000;
+  padding: 10px 28px;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  font: bold 14px Helvetica;
+  text-align: center;
+  letter-spacing: 1.25px;
+  margin-top: 12%;
+  margin-left: -2px;
+}
+@media only screen and (min-width: 680px) {
+  .landing-nascar-wrapper .how-it-works-section .list-container a {
+    padding: 23px 43px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .how-it-works-section .list-container a {
+    margin-top: 3%;
+    margin-left: 7px;
+  }
+}
+.landing-nascar-wrapper .how-it-works-section .list-container a:hover {
+  background-color: #EA241B;
+  color: white;
+}
+.landing-nascar-wrapper .win-big-section {
+  min-height: 800px;
+  background-image: url("../img/landing-nascar/bg-win-big.jpg");
+  text-align: center;
+  width: 100%;
+  background-size: cover;
+}
+@media only screen and (min-width: 840px) {
+  .landing-nascar-wrapper .win-big-section {
+    min-height: 710px;
+  }
+}
+.landing-nascar-wrapper .win-big-section h2 {
+  font-family: "Jura", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  letter-spacing: 2px;
+  padding-top: 10%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .win-big-section h2 {
+    padding-top: 6%;
+  }
+}
+.landing-nascar-wrapper .win-big-section .prize-info {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.landing-nascar-wrapper .win-big-section .prize-info p {
+  font: normal 2.1em Helvetica;
+  width: 70%;
+  margin: auto;
+}
+@media only screen and (min-width: 980px) {
+  .landing-nascar-wrapper .win-big-section .prize-info {
+    margin-top: 3%;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-nascar-wrapper .win-big-section .prize-list {
+    padding-bottom: 6%;
+  }
+}
+.landing-nascar-wrapper .win-big-section .prize-list p {
+  font-family: "akkuratregular";
+  font-weight: normal;
+  font-size: 2.1em;
+  margin-top: 3%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-nascar-wrapper .win-big-section .prize-list p {
+    padding-top: 15%;
+  }
+}
+.landing-nascar-wrapper .win-big-section .prize-list .prize-images {
+  width: 118px;
+  margin-top: 8px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-nascar-wrapper .win-big-section .prize-list .prize-images {
+    width: 203px;
+  }
+}
+.landing-nascar-wrapper .win-big-section .prize-list a {
+  line-height: 7em;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  border: 2px solid #FFFFFF;
+  border-radius: 2px;
+  padding: 10px 28px;
+  background-color: rgb(234, 36, 27);
+}
+@media only screen and (min-width: 680px) {
+  .landing-nascar-wrapper .win-big-section .prize-list a {
+    padding: 23px 43px;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-nascar-wrapper .win-big-section .prize-list a {
+    line-height: 8em;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-nascar-wrapper .win-big-section .prize-list a {
+    line-height: 11em;
+  }
+}
+.landing-nascar-wrapper .win-big-section .prize-list a:hover {
+  background-color: rgba(234, 36, 27, 0);
+  color: #000000;
+  border-color: #000000;
+}
+@media only screen and (min-width: 840px) {
+  .landing-nascar-wrapper .win-big-section .prize-item {
+    display: inline-block;
+    margin-right: 100px;
+  }
+  .landing-nascar-wrapper .win-big-section .prize-item:first-child {
+    position: relative;
+    top: 58px;
+  }
+  .landing-nascar-wrapper .win-big-section .prize-item:first-child img {
+    width: 215px;
+  }
+  .landing-nascar-wrapper .win-big-section .prize-item:first-child p {
+    margin-top: 3%;
+    position: relative;
+    bottom: 35px;
+  }
+  .landing-nascar-wrapper .win-big-section .prize-item:nth-child(3) {
+    position: relative;
+    top: 29px;
+    margin-right: 0;
+  }
+  .landing-nascar-wrapper .win-big-section .prize-item:nth-child(3) img {
+    width: 234px;
+  }
+  .landing-nascar-wrapper .win-big-section .prize-item:nth-child(3) p {
+    position: relative;
+    bottom: 5px;
+  }
+}
+
+@font-face {
+  font-family: "UnitedSansCdLt";
+  src: url("/css/fonts/UnitedSansCdLt.eot");
+  src: url("/css/fonts/UnitedSansCdLt.eot?#iefix") format("embedded-opentype"), url("/css/fonts/UnitedSansCdLt.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "UnitedSansCdBd";
+  src: url("/css/fonts/UnitedSansCdBd.eot");
+  src: url("/css/fonts/UnitedSansCdBd.eot?#iefix") format("embedded-opentype"), url("/css/fonts/UnitedSansCdBd.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "UnitedSansCdHv";
+  src: url("/css/fonts/UnitedSansCdHv.eot");
+  src: url("/css/fonts/UnitedSansCdHv.eot?#iefix") format("embedded-opentype"), url("/css/fonts/UnitedSansCdHv.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+/* =======================================
+   Header
+   ======================================= */
+.landing-blazers-wrapper {
+  /* =======================================
+     Body
+     ======================================= */
+}
+.landing-blazers-wrapper .header {
+  background: url("../img/landing-blazers/blazers-top-panel.jpg") center center no-repeat;
+  background-size: cover;
+  text-transform: uppercase;
+  text-align: center;
+  min-height: 320px;
+  color: #FFFFFF;
+}
+.landing-blazers-wrapper .header img {
+  width: 400px;
+  margin-top: 6%;
+}
+.landing-blazers-wrapper .header .title {
+  font-family: "UnitedSansCdLt";
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 4.47em;
+  line-height: 1;
+  margin-top: 3%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .header .title {
+    font-size: 8.47em;
+  }
+}
+.landing-blazers-wrapper .header .subtitle p {
+  font-family: "UnitedSansCdLt";
+  font-weight: 400;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin-top: 0.25em;
+}
+.landing-blazers-wrapper .header .subtitle p:first-child {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .header .subtitle p:first-child {
+    padding-bottom: 20px;
+  }
+}
+.landing-blazers-wrapper .header .subtitle p:nth-child(2) {
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .header .subtitle p:nth-child(2) {
+    padding-bottom: 20px;
+  }
+}
+.landing-blazers-wrapper .header .powered-by img {
+  margin-top: 0;
+  width: 180px;
+}
+.landing-blazers-wrapper .header a {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #000000;
+  padding: 10px 28px;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  margin-top: 5px;
+  margin-left: -2px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 680px) {
+  .landing-blazers-wrapper .header a {
+    padding: 23px 43px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .header a {
+    margin-top: 5px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+  }
+}
+.landing-blazers-wrapper .header a:hover {
+  background-color: transparent;
+  color: white;
+}
+.landing-blazers-wrapper .how-it-works-section {
+  background-color: #C80F2E;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+.landing-blazers-wrapper .how-it-works-section h2 {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  padding-top: 8%;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .how-it-works-section h2 {
+    padding-top: 6%;
+    position: relative;
+    left: 55%;
+    top: 90px;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  .landing-blazers-wrapper .how-it-works-section h2 {
+    top: 115px;
+  }
+}
+.landing-blazers-wrapper .how-it-works-section .iphone-promo {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 55%;
+  width: 55%;
+}
+@media screen and (min-width: 400px) and (max-width: 480px) {
+  .landing-blazers-wrapper .how-it-works-section .iphone-promo {
+    width: 51%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  .landing-blazers-wrapper .how-it-works-section .iphone-promo {
+    width: 46%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 680px) {
+  .landing-blazers-wrapper .how-it-works-section .iphone-promo {
+    width: 42%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 720px) {
+  .landing-blazers-wrapper .how-it-works-section .iphone-promo {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 840px) {
+  .landing-blazers-wrapper .how-it-works-section .iphone-promo {
+    width: 38%;
+    right: 53%;
+  }
+}
+@media screen and (min-width: 840px) and (max-width: 980px) {
+  .landing-blazers-wrapper .how-it-works-section .iphone-promo {
+    width: 36%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .how-it-works-section .iphone-promo {
+    bottom: 0px;
+    width: 29%;
+    height: 382px;
+  }
+}
+.landing-blazers-wrapper .how-it-works-section .iphone-promo img {
+  width: 120%;
+  position: absolute;
+  right: 20px;
+  top: 25%;
+}
+.landing-blazers-wrapper .how-it-works-section .list-container {
+  margin-left: 43%;
+  width: 60%;
+  display: block;
+  margin-top: 13%;
+  margin-bottom: 15%;
+}
+@media only screen and (min-width: 450px) {
+  .landing-blazers-wrapper .how-it-works-section .list-container {
+    margin-left: 50%;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-blazers-wrapper .how-it-works-section .list-container {
+    margin-left: 55%;
+    margin-bottom: 10%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .how-it-works-section .list-container {
+    margin-left: 60%;
+    margin-bottom: 7%;
+    margin-top: 12%;
+  }
+}
+.landing-blazers-wrapper .how-it-works-section .list-container ol {
+  display: inline;
+  list-style-type: none;
+}
+.landing-blazers-wrapper .how-it-works-section .list-container .list-numbers {
+  width: 34px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .how-it-works-section .list-container .list-numbers {
+    width: 45px;
+  }
+}
+.landing-blazers-wrapper .how-it-works-section .list-container .list-text {
+  font-family: "UnitedSansCdLt";
+  font-weight: 400;
+  font-size: 1.16em;
+  position: relative;
+  left: 10px;
+  bottom: 13px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .how-it-works-section .list-container .list-text {
+    font-size: 1.8em;
+  }
+}
+.landing-blazers-wrapper .how-it-works-section .list-container a {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #000000;
+  padding: 10px 28px;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  margin-top: 12%;
+  margin-left: -2px;
+}
+@media only screen and (min-width: 680px) {
+  .landing-blazers-wrapper .how-it-works-section .list-container a {
+    padding: 23px 43px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .how-it-works-section .list-container a {
+    margin-top: 3%;
+    margin-left: 7px;
+  }
+}
+.landing-blazers-wrapper .how-it-works-section .list-container a:hover {
+  background-color: #C80F2E;
+  color: white;
+}
+.landing-blazers-wrapper .win-big-section {
+  min-height: 800px;
+  background-image: url("../img/landing-blazers/blazers-bottom-panel-whole-arena.jpg");
+  text-align: center;
+  width: 100%;
+  background-size: cover;
+  background-position: bottom;
+}
+@media only screen and (min-width: 840px) {
+  .landing-blazers-wrapper .win-big-section {
+    min-height: 710px;
+  }
+}
+.landing-blazers-wrapper .win-big-section h2 {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  letter-spacing: 2px;
+  padding-top: 10%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .win-big-section h2 {
+    padding-top: 6%;
+  }
+}
+.landing-blazers-wrapper .win-big-section .prize-info {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.landing-blazers-wrapper .win-big-section .prize-info p {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  font-size: 2.1em;
+  width: 70%;
+  margin: auto;
+}
+.landing-blazers-wrapper .win-big-section .prize-info a {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  line-height: 7em;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+  padding: 10px 28px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 680px) {
+  .landing-blazers-wrapper .win-big-section .prize-info a {
+    padding: 23px 43px;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-blazers-wrapper .win-big-section .prize-info a {
+    line-height: 8em;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-blazers-wrapper .win-big-section .prize-info a {
+    line-height: 11em;
+  }
+}
+.landing-blazers-wrapper .win-big-section .prize-info a:hover {
+  background-color: rgba(234, 36, 27, 0);
+  color: #000000;
+  border-color: #000000;
+}
+@media only screen and (min-width: 980px) {
+  .landing-blazers-wrapper .win-big-section .prize-info {
+    margin-top: 3%;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-blazers-wrapper .win-big-section .prize-list {
+    padding-bottom: 6%;
+  }
+}
+.landing-blazers-wrapper .win-big-section .prize-list p {
+  font-family: "UnitedSansCdBd";
+  font-weight: 400;
+  font-weight: normal;
+  font-size: 2.1em;
+  margin: 1em 0 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.landing-blazers-wrapper .win-big-section .prize-list .prize-images {
+  width: 130px;
+  margin-top: 8px;
+}
+.landing-blazers-wrapper .win-big-section .prize-list .prize-images.perfect-game {
+  width: 203px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-blazers-wrapper .win-big-section .prize-list .prize-images.perfect-game {
+    width: 268px;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-blazers-wrapper .win-big-section .prize-list .prize-images {
+    width: 203px;
+  }
+}
+.landing-blazers-wrapper .win-big-section .prize-list .asterisk {
+  font-size: 12px;
+  margin: 0;
+}
+@media only screen and (min-width: 840px) {
+  .landing-blazers-wrapper .win-big-section .prize-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em auto 0;
+    max-width: 920px;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-list p {
+    margin: 25px 0 0;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-item {
+    width: 30%;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-item:first-child img {
+    width: 268px;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-item:first-child p {
+    margin-top: 40px;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-item:nth-child(2) {
+    position: relative;
+    top: -5px;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-item:nth-child(2) img {
+    width: 185px;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-item:nth-child(3) {
+    margin-right: 0;
+  }
+  .landing-blazers-wrapper .win-big-section .prize-item:nth-child(3) img {
+    width: 180px;
+  }
+}
+.landing-blazers-wrapper .win-big-section .powered-by img {
+  width: 180px;
+}
+
+.alert-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 200ms ease-in;
+  -moz-transition: opacity 200ms ease-in;
+  -ms-transition: opacity 200ms ease-in;
+  -o-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+}
+.alert-modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+.alert-modal .modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 200px;
+  width: 300px;
+  margin-top: -100px;
+  margin-left: -150px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  text-align: center;
+}
+.alert-modal .modal-window span {
+  font-family: "UnitedSansCdLt";
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  font-size: 20px;
+}
+.alert-modal .modal-window span a {
+  line-height: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+  padding: 10px 28px;
+  background-color: transparent;
+  text-transform: uppercase;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =======================================
+   Header
+   ======================================= */
+.landing-bulls-wrapper {
+  /* =======================================
+     Body
+     ======================================= */
+}
+.landing-bulls-wrapper .header {
+  background: url("../img/landing-bulls/top-panel-background.jpg") center center no-repeat;
+  background-size: cover;
+  text-transform: uppercase;
+  text-align: center;
+  min-height: 320px;
+  color: #FFFFFF;
+}
+.landing-bulls-wrapper .header img {
+  width: 228px;
+  margin-top: 6%;
+}
+.landing-bulls-wrapper .header .title {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 4.47em;
+  line-height: 1;
+  margin-top: 3%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .header .title {
+    font-size: 8.47em;
+  }
+}
+.landing-bulls-wrapper .header .subtitle p {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin-top: 0.25em;
+}
+.landing-bulls-wrapper .header .subtitle p:first-child {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .header .subtitle p:first-child {
+    padding-bottom: 20px;
+  }
+}
+.landing-bulls-wrapper .header .subtitle p:nth-child(2) {
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .header .subtitle p:nth-child(2) {
+    padding-bottom: 20px;
+  }
+}
+.landing-bulls-wrapper .header a {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #000000;
+  padding: 10px 28px;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  margin-top: 5px;
+  margin-left: -2px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 680px) {
+  .landing-bulls-wrapper .header a {
+    padding: 23px 43px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .header a {
+    margin-top: 5px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+  }
+}
+.landing-bulls-wrapper .header a:hover {
+  background-color: transparent;
+  color: white;
+}
+.landing-bulls-wrapper .how-it-works-section {
+  background-color: #BA0C35;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+.landing-bulls-wrapper .how-it-works-section h2 {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  padding-top: 8%;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .how-it-works-section h2 {
+    padding-top: 6%;
+    position: relative;
+    left: 55%;
+    top: 90px;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  .landing-bulls-wrapper .how-it-works-section h2 {
+    top: 115px;
+  }
+}
+.landing-bulls-wrapper .how-it-works-section .iphone-promo {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 55%;
+  width: 55%;
+}
+@media screen and (min-width: 400px) and (max-width: 480px) {
+  .landing-bulls-wrapper .how-it-works-section .iphone-promo {
+    width: 51%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  .landing-bulls-wrapper .how-it-works-section .iphone-promo {
+    width: 46%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 680px) {
+  .landing-bulls-wrapper .how-it-works-section .iphone-promo {
+    width: 42%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 720px) {
+  .landing-bulls-wrapper .how-it-works-section .iphone-promo {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 840px) {
+  .landing-bulls-wrapper .how-it-works-section .iphone-promo {
+    width: 38%;
+    right: 53%;
+  }
+}
+@media screen and (min-width: 840px) and (max-width: 980px) {
+  .landing-bulls-wrapper .how-it-works-section .iphone-promo {
+    width: 36%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .how-it-works-section .iphone-promo {
+    bottom: 0px;
+    width: 29%;
+    height: 382px;
+  }
+}
+.landing-bulls-wrapper .how-it-works-section .iphone-promo img {
+  width: 120%;
+  position: absolute;
+  right: 20px;
+  top: 25%;
+}
+.landing-bulls-wrapper .how-it-works-section .list-container {
+  margin-left: 43%;
+  width: 60%;
+  display: block;
+  margin-top: 13%;
+  margin-bottom: 15%;
+}
+@media only screen and (min-width: 450px) {
+  .landing-bulls-wrapper .how-it-works-section .list-container {
+    margin-left: 50%;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-bulls-wrapper .how-it-works-section .list-container {
+    margin-left: 55%;
+    margin-bottom: 10%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .how-it-works-section .list-container {
+    margin-left: 60%;
+    margin-bottom: 7%;
+    margin-top: 12%;
+  }
+}
+.landing-bulls-wrapper .how-it-works-section .list-container ol {
+  display: inline;
+  list-style-type: none;
+}
+.landing-bulls-wrapper .how-it-works-section .list-container .list-numbers {
+  width: 34px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .how-it-works-section .list-container .list-numbers {
+    width: 45px;
+  }
+}
+.landing-bulls-wrapper .how-it-works-section .list-container .list-text {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  font-size: 1.16em;
+  position: relative;
+  left: 10px;
+  bottom: 13px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .how-it-works-section .list-container .list-text {
+    font-size: 1.8em;
+  }
+}
+.landing-bulls-wrapper .how-it-works-section .list-container a {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #000000;
+  padding: 10px 28px;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  margin-top: 12%;
+  margin-left: -2px;
+}
+@media only screen and (min-width: 680px) {
+  .landing-bulls-wrapper .how-it-works-section .list-container a {
+    padding: 23px 43px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .how-it-works-section .list-container a {
+    margin-top: 3%;
+    margin-left: 7px;
+  }
+}
+.landing-bulls-wrapper .how-it-works-section .list-container a:hover {
+  background-color: #BA0C35;
+  color: white;
+}
+.landing-bulls-wrapper .win-big-section {
+  min-height: 800px;
+  background-image: url("../img/landing-bulls/panel-background.jpg");
+  text-align: center;
+  width: 100%;
+  background-size: cover;
+}
+@media only screen and (min-width: 840px) {
+  .landing-bulls-wrapper .win-big-section {
+    min-height: 710px;
+  }
+}
+.landing-bulls-wrapper .win-big-section h2 {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  letter-spacing: 2px;
+  padding-top: 10%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .win-big-section h2 {
+    padding-top: 6%;
+  }
+}
+.landing-bulls-wrapper .win-big-section .prize-info {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.landing-bulls-wrapper .win-big-section .prize-info p {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  font-size: 2.1em;
+  width: 70%;
+  margin: auto;
+}
+.landing-bulls-wrapper .win-big-section .prize-info a {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  line-height: 7em;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+  padding: 10px 28px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 680px) {
+  .landing-bulls-wrapper .win-big-section .prize-info a {
+    padding: 23px 43px;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-bulls-wrapper .win-big-section .prize-info a {
+    line-height: 8em;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-bulls-wrapper .win-big-section .prize-info a {
+    line-height: 11em;
+  }
+}
+.landing-bulls-wrapper .win-big-section .prize-info a:hover {
+  background-color: rgba(234, 36, 27, 0);
+  color: #000000;
+  border-color: #000000;
+}
+@media only screen and (min-width: 980px) {
+  .landing-bulls-wrapper .win-big-section .prize-info {
+    margin-top: 3%;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-bulls-wrapper .win-big-section .prize-list {
+    padding-bottom: 6%;
+  }
+}
+.landing-bulls-wrapper .win-big-section .prize-list p {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  font-weight: normal;
+  font-size: 2.1em;
+  margin: 1em 0 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.landing-bulls-wrapper .win-big-section .prize-list .prize-images {
+  width: 118px;
+  margin-top: 8px;
+}
+.landing-bulls-wrapper .win-big-section .prize-list .prize-images.perfect-game {
+  width: 203px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-bulls-wrapper .win-big-section .prize-list .prize-images.perfect-game {
+    width: 268px;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-bulls-wrapper .win-big-section .prize-list .prize-images {
+    width: 203px;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-bulls-wrapper .win-big-section .prize-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em auto 0;
+    max-width: 920px;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-list p {
+    margin: 25px 0 0;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item {
+    width: 30%;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item:first-child img {
+    width: 268px;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item:nth-child(2) {
+    position: relative;
+    top: -5px;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item:nth-child(2) p {
+    margin-top: 22px;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item:nth-child(2) img {
+    width: 166.5px;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item:nth-child(3) {
+    margin-right: 0;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item:nth-child(3) p {
+    margin-top: 16px;
+  }
+  .landing-bulls-wrapper .win-big-section .prize-item:nth-child(3) img {
+    width: 177px;
+  }
+}
+
+.alert-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 200ms ease-in;
+  -moz-transition: opacity 200ms ease-in;
+  -ms-transition: opacity 200ms ease-in;
+  -o-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+}
+.alert-modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+.alert-modal .modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 200px;
+  width: 300px;
+  margin-top: -100px;
+  margin-left: -150px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  text-align: center;
+}
+.alert-modal .modal-window span {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  font-size: 20px;
+}
+.alert-modal .modal-window span a {
+  line-height: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+  padding: 10px 28px;
+  background-color: transparent;
+  text-transform: uppercase;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =======================================
+   Header
+   ======================================= */
+.landing-golfchannel-wrapper {
+  color: #ffffff;
+  /* =======================================
+     HOW IT WORKS SECTION
+     ======================================= */
+  /* =======================================
+     PLAY CHALLENGE SECTION
+     ======================================= */
+}
+.landing-golfchannel-wrapper .header-section {
+  background-image: url("../img/landing-golfchannel/Golfball-bg.png");
+  background-size: cover;
+  text-align: center;
+  height: 1200px;
+  color: #ffffff;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section {
+    height: 825px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 680px) {
+  .landing-golfchannel-wrapper .header-section {
+    background-image: url("../img/landing-golfchannel/Golfball-big-bg.jpg");
+    background-size: 340%;
+    background-position: 45% 0%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 980px) {
+  .landing-golfchannel-wrapper .header-section {
+    background-image: url("../img/landing-golfchannel/Golfball-big-bg.jpg");
+    background-size: 280%;
+    background-position: 35% 0%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section {
+    background-image: url("../img/landing-golfchannel/Golfball-big-bg.jpg");
+    background-size: 115%;
+    background-position: 70% 0%;
+  }
+}
+.landing-golfchannel-wrapper .header-section .fanbeat-challenge-logo {
+  width: 200px;
+  margin-top: 15px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .fanbeat-challenge-logo {
+    width: 270px;
+    margin-top: 10px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-container {
+  margin: auto;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container {
+    display: flex;
+    width: 910px;
+    justify-content: space-around;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-container .prize-items {
+  padding-top: 35px;
+  margin: auto;
+}
+.landing-golfchannel-wrapper .header-section .prize-container .prize-items.play-button {
+  padding-top: 45px;
+  padding-bottom: 15px;
+}
+.landing-golfchannel-wrapper .header-section .prize-container .prize-items.play-button a {
+  font-family: "frank-new";
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 49px;
+  font-size: 14px;
+  border-radius: 2px;
+  letter-spacing: 0.88px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .prize-items.play-button a {
+    padding: 10px 60px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .prize-items.play-button {
+    display: none;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .prize-items {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-container .prize-items img {
+  padding-bottom: 10px;
+  height: 150px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .prize-items img {
+    height: 163px;
+    padding-bottom: 0px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-container .prize-items p {
+  font-family: "frank-new";
+  font-weight: 400;
+  font-size: 14px;
+  width: 230px;
+  margin: auto;
+  letter-spacing: 0.8px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .prize-items p p {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .dollar-icon {
+    padding-top: 35px;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .dollar-icon img {
+    padding-bottom: 15px;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .dollar-icon p {
+    margin-top: 11px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-container .bag-icon {
+  padding: 15px 0 0 15px;
+  margin: auto;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .bag-icon {
+    padding: 0;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .bag-icon img {
+    width: 147px;
+    height: 163px;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .bag-icon p {
+    margin-top: 23px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-container .putter-icon {
+  padding-top: 28px;
+  margin: auto;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .putter-icon {
+    padding-top: 13px;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .putter-icon img {
+    width: 164px;
+    padding-top: 10px;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .putter-icon p {
+    margin-top: 10px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-container .driver-icon {
+  padding: 15px 0 0 15px;
+  margin: auto;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-container .driver-icon {
+    padding: 0;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .driver-icon img {
+    width: 208px;
+    height: 163px;
+  }
+  .landing-golfchannel-wrapper .header-section .prize-container .driver-icon p {
+    margin-top: 23px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container {
+  font-family: "frank-new";
+  font-weight: 400;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .header-section .prize-button-container {
+    width: 100%;
+    margin-top: 60px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container .prize-info p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  font-weight: 400;
+  font-family: GCFrankLight;
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container .prize-info p:first-child {
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .header-section .prize-button-container .prize-info p {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container .prize-button {
+  margin-top: 30px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-button-container .prize-button {
+    margin-top: 35px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container .prize-button a {
+  font-family: "frank-new";
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 49px;
+  font-size: 14px;
+  border-radius: 2px;
+  letter-spacing: 0.88px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .header-section .prize-button-container .prize-button a {
+    padding: 10px 60px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container .prize-button a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container .prize-disclaimer {
+  width: 234px;
+  margin: auto;
+  padding-top: 30px;
+  font-size: 7px;
+  line-height: 10px;
+  font-family: GCFrankLight;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .header-section .prize-button-container .prize-disclaimer {
+    padding-top: 40px;
+    width: 750px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-button-container .prize-disclaimer {
+    font-size: 12px;
+    line-height: 13px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .prize-button-container .prize-disclaimer a {
+  color: white;
+  font-size: 7px;
+  font-family: GCFrankLight;
+  line-height: 10px;
+  font-weight: 400;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .prize-button-container .prize-disclaimer a {
+    font-size: 12px;
+  }
+}
+.landing-golfchannel-wrapper .header-section .arrow-down {
+  padding-top: 30px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .header-section .arrow-down {
+    padding-top: 65px;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section {
+  background-color: #004E7B;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section h2 {
+  font-family: "frank-new";
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 40px;
+  letter-spacing: 0.6px;
+  font-size: 24px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section h2 {
+    position: relative;
+    left: 57%;
+    top: 25px;
+    display: inline-block;
+    font-size: 32px;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .iphone-photo {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  width: 38%;
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .iphone-photo img {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  min-height: 276px;
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .iphone-photo img {
+    left: 10%;
+  }
+}
+@media screen and (min-width: 840px) and (max-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .iphone-photo img {
+    left: 15%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .iphone-photo img {
+    top: 15%;
+    left: 59%;
+    width: 324px;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container {
+  margin-left: 40%;
+  width: 60%;
+  display: block;
+  margin-top: 13%;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container {
+    margin-left: 45%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 720px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container {
+    margin-left: 50%;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container {
+    margin-left: 55%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-left: 57%;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container ul {
+  display: inline;
+  list-style-type: none;
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container ul li {
+  padding-bottom: 5px;
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container ul .list-numbers {
+  width: 34px;
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container ul .list-text {
+  font-family: "frank-new";
+  font-weight: 500;
+  font-size: 13px;
+  position: relative;
+  left: 5px;
+  bottom: 13px;
+  letter-spacing: 0.37px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container ul .list-text {
+    font-size: 16px;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container .how-it-works-button a {
+  font-family: "frank-new";
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  color: #000000;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  text-align: center;
+  letter-spacing: 0.88px;
+  margin: 15px 0;
+  padding: 7px 44px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container .how-it-works-button a {
+    padding: 7px 60px;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container .how-it-works-button a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container .how-it-works-disclaimer {
+  width: 170px;
+  height: 60px;
+  font-family: GCFrankLight;
+  text-align: center;
+  line-height: 10px;
+  letter-spacing: 0.01px;
+  font-size: 7px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container .how-it-works-disclaimer {
+    width: 390px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 13px;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .list-container .how-it-works-disclaimer a {
+  color: white;
+  font-size: 7px;
+  font-family: GCFrankLight;
+  line-height: 10px;
+  font-weight: 400;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .list-container .how-it-works-disclaimer a {
+    font-size: 12px;
+  }
+}
+.landing-golfchannel-wrapper .how-it-works-golf-section .arrow-down {
+  display: block;
+  margin: auto;
+  padding: 25px 0;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .how-it-works-golf-section .arrow-down {
+    padding: 20px 0 60px 0;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section {
+  height: 460px;
+  background: url("../img/landing-golfchannel/Golfball-challenge-bg.png");
+  text-align: center;
+  width: 100%;
+  background-size: cover;
+  background-color: #004E7B;
+}
+@media screen and (min-width: 680px) and (max-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section {
+    background-image: url("../img/landing-golfchannel/Golfball-big-bg.jpg");
+    background-size: 150%;
+    background-position: 50% 30%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section {
+    background-image: url("../img/landing-golfchannel/Golfball-big-bg.jpg");
+    background-size: 100%;
+    background-position: 80% 50%;
+    height: 520px;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container {
+  margin: auto;
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container img {
+  margin: 25px 0 24px 0;
+  width: 200px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container img {
+    margin: 60px 0 24px 0;
+    width: 270px;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info {
+  margin-bottom: 25px;
+  text-align: center;
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info .desktop {
+  display: none;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info .desktop {
+    display: block;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info .mobile {
+    display: none;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info p {
+  font-family: "frank-new";
+  font-weight: 500;
+  font-size: 20px;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: 0.9px;
+  padding-bottom: 15px;
+  width: 220px;
+  margin: auto;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info p {
+    width: 100%;
+    font-size: 36px;
+    padding-bottom: 20px;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info span {
+  font-family: "frank-new";
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-info span {
+    font-size: 22px;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-button a {
+  font-family: "frank-new";
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 48px;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.88px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-button a {
+    padding: 10px 60px;
+    margin-top: 10px;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-button a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-disclaimer {
+  font-family: GCFrankLight;
+  width: 235px;
+  margin: 14px auto;
+  font-size: 7px;
+  line-height: 10px;
+}
+@media screen and (min-width: 980px) and (max-width: 840px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-disclaimer {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-disclaimer {
+    width: 570px;
+    font-size: 12px;
+    line-height: 13px;
+  }
+}
+.landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-disclaimer a {
+  color: white;
+  font-size: 7px;
+  font-family: GCFrankLight;
+  line-height: 10px;
+  font-weight: 400;
+}
+@media only screen and (min-width: 980px) {
+  .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container .challenge-disclaimer a {
+    font-size: 12px;
+  }
+}
+.landing-golfchannel-wrapper .page-footer {
+  color: #004E7B;
+}
+.landing-golfchannel-wrapper .page-footer .copyright {
+  padding-bottom: 0 !important;
+}
+.landing-golfchannel-wrapper .page-footer a {
+  color: #004E7B;
+}
+.landing-golfchannel-wrapper .page-footer .social {
+  padding-top: 3%;
+  width: 70%;
+  margin: auto;
+}
+
+/* =======================================
+   Header
+   ======================================= */
+.landing-hokies-wrapper {
+  /* =======================================
+     Body
+     ======================================= */
+}
+.landing-hokies-wrapper .header {
+  background: url("../img/landing-hokies/top-panel.jpg") center center no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  min-height: 320px;
+  padding-bottom: 6%;
+  text-transform: uppercase;
+  text-align: center;
+}
+.landing-hokies-wrapper .header img {
+  width: 500px;
+  margin-top: 6%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.landing-hokies-wrapper .header .title {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 4.47em;
+  line-height: 1;
+  margin-top: 3%;
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .header .title {
+    font-size: 8.47em;
+  }
+}
+.landing-hokies-wrapper .header .subtitle p {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin-top: 0.25em;
+}
+.landing-hokies-wrapper .header .subtitle p:first-child {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .header .subtitle p:first-child {
+    padding-bottom: 20px;
+  }
+}
+.landing-hokies-wrapper .header .subtitle p:nth-child(2) {
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .header .subtitle p:nth-child(2) {
+    padding-bottom: 20px;
+  }
+}
+.landing-hokies-wrapper .header .powered-by img {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 180px;
+}
+.landing-hokies-wrapper .header a {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #000000;
+  padding: 10px 28px;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  margin-top: 5px;
+  margin-left: -2px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 680px) {
+  .landing-hokies-wrapper .header a {
+    padding: 23px 43px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .header a {
+    margin-top: 5px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+  }
+}
+.landing-hokies-wrapper .header a:hover {
+  background-color: transparent;
+  color: white;
+}
+.landing-hokies-wrapper .how-it-works-section {
+  background-color: #6A2C3E;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+.landing-hokies-wrapper .how-it-works-section h2 {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  padding-top: 8%;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .how-it-works-section h2 {
+    padding-top: 6%;
+    position: relative;
+    left: 55%;
+    top: 90px;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  .landing-hokies-wrapper .how-it-works-section h2 {
+    top: 115px;
+  }
+}
+.landing-hokies-wrapper .how-it-works-section .iphone-promo {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 55%;
+  width: 55%;
+}
+@media screen and (min-width: 400px) and (max-width: 480px) {
+  .landing-hokies-wrapper .how-it-works-section .iphone-promo {
+    width: 51%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  .landing-hokies-wrapper .how-it-works-section .iphone-promo {
+    width: 46%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 680px) {
+  .landing-hokies-wrapper .how-it-works-section .iphone-promo {
+    width: 42%;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 720px) {
+  .landing-hokies-wrapper .how-it-works-section .iphone-promo {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 840px) {
+  .landing-hokies-wrapper .how-it-works-section .iphone-promo {
+    width: 38%;
+    right: 53%;
+  }
+}
+@media screen and (min-width: 840px) and (max-width: 980px) {
+  .landing-hokies-wrapper .how-it-works-section .iphone-promo {
+    width: 36%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .how-it-works-section .iphone-promo {
+    bottom: 0px;
+    width: 29%;
+    height: 382px;
+  }
+}
+.landing-hokies-wrapper .how-it-works-section .iphone-promo img {
+  width: 120%;
+  position: absolute;
+  right: 20px;
+  top: 25%;
+}
+.landing-hokies-wrapper .how-it-works-section .list-container {
+  margin-left: 43%;
+  width: 60%;
+  display: block;
+  margin-top: 13%;
+  margin-bottom: 15%;
+}
+@media only screen and (min-width: 450px) {
+  .landing-hokies-wrapper .how-it-works-section .list-container {
+    margin-left: 50%;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-hokies-wrapper .how-it-works-section .list-container {
+    margin-left: 55%;
+    margin-bottom: 10%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .how-it-works-section .list-container {
+    margin-left: 60%;
+    margin-bottom: 7%;
+    margin-top: 12%;
+  }
+}
+.landing-hokies-wrapper .how-it-works-section .list-container ol {
+  display: inline;
+  list-style-type: none;
+}
+.landing-hokies-wrapper .how-it-works-section .list-container .list-numbers {
+  width: 34px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .how-it-works-section .list-container .list-numbers {
+    width: 45px;
+  }
+}
+.landing-hokies-wrapper .how-it-works-section .list-container .list-text {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  font-size: 1.16em;
+  position: relative;
+  left: 10px;
+  bottom: 13px;
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .how-it-works-section .list-container .list-text {
+    font-size: 1.8em;
+  }
+}
+.landing-hokies-wrapper .how-it-works-section .list-container a {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #000000;
+  padding: 10px 28px;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  margin-top: 12%;
+  margin-left: -2px;
+}
+@media only screen and (min-width: 680px) {
+  .landing-hokies-wrapper .how-it-works-section .list-container a {
+    padding: 23px 43px;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .how-it-works-section .list-container a {
+    margin-top: 3%;
+    margin-left: 7px;
+  }
+}
+.landing-hokies-wrapper .how-it-works-section .list-container a:hover {
+  background-color: #6A2C3E;
+  color: white;
+}
+.landing-hokies-wrapper .win-big-section {
+  min-height: 800px;
+  background-image: url("../img/landing-hokies/bottom-panel.jpg");
+  text-align: center;
+  width: 100%;
+  background-size: cover;
+  background-position: bottom;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+@media only screen and (min-width: 840px) {
+  .landing-hokies-wrapper .win-big-section {
+    min-height: 710px;
+    padding-top: 6%;
+    padding-bottom: 6%;
+  }
+}
+.landing-hokies-wrapper .win-big-section h2 {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 4.47em;
+  letter-spacing: 2px;
+}
+.landing-hokies-wrapper .win-big-section .prize-info {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.landing-hokies-wrapper .win-big-section .prize-info p {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  font-size: 3em;
+  width: 70%;
+  margin: auto;
+}
+.landing-hokies-wrapper .win-big-section .prize-info a {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  line-height: 7em;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+  padding: 10px 28px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 680px) {
+  .landing-hokies-wrapper .win-big-section .prize-info a {
+    padding: 23px 43px;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-hokies-wrapper .win-big-section .prize-info a {
+    line-height: 8em;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-hokies-wrapper .win-big-section .prize-info a {
+    line-height: 11em;
+  }
+}
+.landing-hokies-wrapper .win-big-section .prize-info a:hover {
+  background-color: rgba(234, 36, 27, 0);
+  color: #000000;
+  border-color: #000000;
+}
+@media only screen and (min-width: 980px) {
+  .landing-hokies-wrapper .win-big-section .prize-info {
+    margin-top: 3%;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 840px) {
+  .landing-hokies-wrapper .win-big-section .prize-list {
+    padding-bottom: 6%;
+  }
+}
+.landing-hokies-wrapper .win-big-section .prize-list p {
+  font-family: "Knockout 27 A", "Knockout 27 B";
+  font-weight: 400;
+  font-weight: normal;
+  font-size: 3em;
+  margin: 1em 0 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.landing-hokies-wrapper .win-big-section .prize-list .prize-images {
+  width: 130px;
+  margin-top: 8px;
+}
+.landing-hokies-wrapper .win-big-section .prize-list .prize-images.perfect-game {
+  width: 203px;
+}
+@media only screen and (min-width: 840px) {
+  .landing-hokies-wrapper .win-big-section .prize-list .prize-images.perfect-game {
+    width: 268px;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .landing-hokies-wrapper .win-big-section .prize-list .prize-images {
+    width: 203px;
+  }
+}
+.landing-hokies-wrapper .win-big-section .prize-list .asterisk {
+  font-size: 12px;
+  margin: 0;
+}
+@media only screen and (min-width: 840px) {
+  .landing-hokies-wrapper .win-big-section .prize-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em auto 0;
+    max-width: 920px;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-list p {
+    margin: 25px 0 0;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item {
+    width: 30%;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item p {
+    margin-top: 40px;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item:first-child img {
+    width: 268px;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item:nth-child(2) {
+    position: relative;
+    top: -5px;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item:nth-child(2) p {
+    margin-top: 43px;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item:nth-child(2) img {
+    width: 165px;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item:nth-child(3) {
+    margin-right: 0;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item:nth-child(3) p {
+    margin-top: 38px;
+  }
+  .landing-hokies-wrapper .win-big-section .prize-item:nth-child(3) img {
+    width: 165px;
+  }
+}
+.landing-hokies-wrapper .win-big-section .powered-by img {
+  width: 180px;
+}
+
+.page-footer {
+  color: #6A2C3E;
+}
+.page-footer a {
+  color: #6A2C3E;
+}
+
+.alert-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 200ms ease-in;
+  -moz-transition: opacity 200ms ease-in;
+  -ms-transition: opacity 200ms ease-in;
+  -o-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+}
+.alert-modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+.alert-modal .modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 200px;
+  width: 300px;
+  margin-top: -100px;
+  margin-left: -150px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  text-align: center;
+}
+.alert-modal .modal-window span {
+  font-family: "Knockout 29 A", "Knockout 29 B";
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  font-size: 20px;
+}
+.alert-modal .modal-window span a {
+  line-height: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+  padding: 10px 28px;
+  background-color: transparent;
+  text-transform: uppercase;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caesars .landing-golfchannel-wrapper .header-section {
+  background: url("../img/landing-caesars/landing-caesars.png") no-repeat scroll 0 82%/cover;
+  z-index: 1;
+  position: relative;
+  height: 950px;
+}
+@media only screen and (max-width: 991px) {
+  .caesars .landing-golfchannel-wrapper .header-section {
+    height: 1350px;
+  }
+}
+.caesars .landing-golfchannel-wrapper .header-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+}
+.caesars .landing-golfchannel-wrapper .header-section > img {
+  position: relative;
+  padding: 50px 0 30px;
+}
+.caesars .landing-golfchannel-wrapper .header-section .arrow-down {
+  padding-top: 70px;
+}
+@media only screen and (max-width: 991px) {
+  .caesars .landing-golfchannel-wrapper .header-section .arrow-down {
+    padding-top: 50px;
+  }
+}
+.caesars .landing-golfchannel-wrapper .header-section > div {
+  position: relative;
+}
+.caesars .landing-golfchannel-wrapper .header-section > div p {
+  font-weight: bold !important;
+}
+.caesars .landing-golfchannel-wrapper .header-section .prize-button-container .prize-info p {
+  font-weight: bold;
+}
+.caesars .landing-golfchannel-wrapper .header-section .prize-items {
+  padding: 14px !important;
+  margin: 0 !important;
+}
+.caesars .landing-golfchannel-wrapper .header-section .prize-items img {
+  height: 164px !important;
+  object-fit: contain;
+  padding: 0 !important;
+}
+.caesars .landing-golfchannel-wrapper .header-section .prize-items p {
+  margin-top: 10px !important;
+}
+.caesars .landing-golfchannel-wrapper .play-challenge-section {
+  background: url("../img/landing-caesars/landing-caesars.png") no-repeat scroll 0 78.5%/cover;
+  z-index: 1;
+  position: relative;
+  height: 550px;
+}
+@media only screen and (max-width: 991px) {
+  .caesars .landing-golfchannel-wrapper .play-challenge-section {
+    height: 490px;
+  }
+}
+.caesars .landing-golfchannel-wrapper .play-challenge-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+}
+.caesars .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container {
+  position: relative;
+  z-index: 1;
+}
+.caesars .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container img {
+  padding-bottom: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .caesars .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container img {
+    padding-bottom: 0px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .caesars .landing-golfchannel-wrapper .play-challenge-section .play-challenge-container p.desktop {
+    padding: 0 30px;
+    line-height: 1;
+  }
+}
+.caesars .how-it-works-golf-section {
+  background: #eb2030;
+}
+@media only screen and (max-width: 991px) {
+  .caesars .challenge-button a, .caesars .prize-button a, .caesars .how-it-works-button a {
+    padding: 10px !important;
+  }
+}
+
+.caesars footer.page-footer a, .caesars footer.page-footer span {
+  color: #e92637;
+}
+
+/*# sourceMappingURL=style.css.map */
